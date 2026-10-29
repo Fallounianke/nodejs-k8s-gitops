@@ -10,7 +10,7 @@ L'objectif est de mettre en pratique les concepts de **Cloud Computing, Infrastr
 
 ![Architecture du projet](docs/architecture.png)
 
-### 🛠️ Technologies utilisées
+## 🛠️ Technologies utilisées
 
 | Technologie | Rôle |
 |---|---|
@@ -32,7 +32,7 @@ CloudFormation provisionne un VPC (`10.0.0.0/16`), un subnet public et deux inst
 
 L'application Node.js est déployée avec :
 - Un `Deployment` configuré avec **2 réplicas**.
-- Un `Service` de type **NodePort (30080)**.
+- Un `Service` Kubernetes.
 
 **3. GitOps avec Argo CD**
 
@@ -46,39 +46,40 @@ Prometheus collecte les métriques Kubernetes, visualisées dans Grafana.
 
 ### Argo CD — Applications Healthy / Synced
 
-![Argo CD](docs/argocd.png)
+![Argo CD](docs/argocd-tab.png)
 
 ### Grafana — Monitoring des Pods
 
-![Grafana](docs/grafana.png)
+![Grafana](docs/tableau-grafana.png)
 
 ### Kubernetes — État des ressources
 
-![Kubernetes](docs/kubernetes.png)
+![Kubernetes](docs/kubernetes-terminal.png)
 
 ## 📂 Structure du dépôt
 
 ```text
-nodejs-k8s-gitops/
+my-app-gitops/
 ├── README.md
-├── deployment.yaml
-├── service.yaml
 ├── cloudformation/
 │   └── infrastructure.yaml
-└── docs/
-    ├── architecture.png
-    ├── argocd.png
-    ├── grafana.png
-    └── kubernetes.png
+├── deployment.yaml
+├── docs/
+│   ├── architecture.png
+│   ├── argocd-tab.png
+│   ├── kubernetes-terminal.png
+│   └── tableau-grafana.png
+├── k8s/
+└── service.yaml
 ```
 
 ## 🔮 Améliorations prévues
 
-- Ingress Controller et HTTPS.
-- Horizontal Pod Autoscaler (HPA).
-- Readiness et liveness probes.
-- Renforcement de la sécurité Kubernetes.
-- Amélioration de l'application Node.js.
+- Ajouter un Ingress Controller et HTTPS.
+- Configurer un Horizontal Pod Autoscaler (HPA).
+- Ajouter des readiness et liveness probes.
+- Renforcer la sécurité Kubernetes.
+- Étendre les fonctionnalités de l'application Node.js.
 
 ---
 
