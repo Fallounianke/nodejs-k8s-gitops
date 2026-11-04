@@ -18,7 +18,7 @@ spec:
         - name: ecr-secret
       containers:
         - name: nodejs-app
-          image: 272694330691.dkr.ecr.eu-north-1.amazonaws.com/k8s-demo:latest
+          image: 272694330691.dkr.ecr.eu-north-1.amazonaws.com/k8s-demo:3a6d6ce30f2e5c4f01ef8456a22e0671e49ee90a
           ports:
             - containerPort: 3000
           resources:
